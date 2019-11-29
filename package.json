@@ -1,0 +1,21 @@
+{
+  "name": "electron-steg",
+  "version": "1.0.0",
+  "description": "Electron demo app for a school presentation",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron .",
+    "start": "electron ."
+  },
+  "author": "Simon Schiller",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.4.8"
+  },
+  "dependencies": {
+    "electron-navigation": "^1.5.8",
+    "electron-tabs": "^0.11.0",
+    "nedb": "^1.8.0",
+    "x-chrome-tabs": "^1.0.5"
+  }
+}

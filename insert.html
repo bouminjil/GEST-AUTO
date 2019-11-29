@@ -1,0 +1,128 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>STEG-AUTO</title>
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="./js/index.js"></script>
+    </head>
+
+<body>
+    <div class="container">
+  
+      <h3>Ajouter Chauffeur :</h3>
+      <div class="row">
+        <div class="two columns">
+          <label for="Nom">Nom</label>
+          <input class="u-full-width" placeholder="BERRIRI" id="Nom" type="text">
+        </div>
+        <div class="two columns">
+          <label for="Prénom">Prénom</label>
+          <input class="u-full-width" placeholder="Mohamed" id="Prénom" type="text">
+        </div>
+  
+        <div class="two columns">
+          <label for="Matricule">MATRICULE</label>
+          <input class="u-full-width" placeholder="FF000235" id="Matricule" type="text">
+        </div>
+  
+        <div class="two columns">
+          <label for="Télephone">Téléphone</label>
+          <input class="u-full-width" placeholder="26083035" id="Télephone" type="text">
+        </div>
+  
+        <div class="two columns">
+          <label for="CIN">CIN</label>
+          <input class="u-full-width" placeholder="00000000" id="CIN" type="text">
+        </div>
+  
+        <div class="two columns">
+          <label for="add" class="invisible">x</label>
+          <input class="button-primary" value="AJOUTER" id="add" type="button">
+        </div>
+      </div>
+     
+  
+      <h3>Liste de Chauffeurs:</h3>
+      <table class='u-full-width'>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Matricule</th>
+            <th>Télephone</th>
+            <th>CIN</th>
+            
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tablebody">
+        </tbody>
+      </table>
+      <hr>
+  
+  
+  
+   <!-- //////////////////// Care Section /////////////////--> 
+      <h3>Ajouter Vhiucule :</h3>
+      <div class="row">
+        <div class="two columns">
+          <label for="Marque">Marque</label>
+          <input class="u-full-width" placeholder="FORD" id="Marque" type="text">
+        </div>
+        <div class="two columns">
+          <label for="MatriculeV">Matricule</label>
+          <input class="u-full-width" placeholder="12546 TUN 123" id="MatriculeV" type="text">
+        </div>
+       
+       <div class="two columns">
+          <label for="Typ_gaz">Type Gazoil</label>
+          <input class="u-full-width" placeholder="ESSENCE" id="Typ_gaz" type="text">
+        </div>
+  
+        <div class="three  columns">
+          <label for="Note">Notes</label>
+          <input class="u-full-width" placeholder="vos notes" id="Note" type="text">
+        </div>
+       
+      
+       
+        
+        <div class="two columns">
+          <label for="addV" class="invisible">x</label>
+          <input class="button-primary" value="AJOUTER" id="addV" type="button">
+        </div>
+      </div>
+  
+      <hr>
+  
+      <h3>Liste de Vehicules :</h3>
+      <table class='u-full-width'>
+        <thead>
+          <tr>
+            <th>Marque</th>
+            <th>Matricule</th>
+            <th>Type Gazoil</th>
+            <th>Note</th>
+                      
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tablebodyV">
+        </tbody>
+      </table>
+    </div>
+
+    <script type="text/javascript">
+        var remote = require('electron').remote;
+        document.addEventListener('keydown', function (e) {
+          if (e.which === 123) {
+            remote.getCurrentWindow().webContents.openDevTools();
+          } else if (e.which === 116) {
+            location.reload();
+          }
+        });
+    </script>
+
+</body>
+</html>
