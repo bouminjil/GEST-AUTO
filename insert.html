@@ -8,6 +8,57 @@
     </head>
 
 <body>
+
+    <div class="container">
+  
+        <h3>Ajouter Type-Controle :</h3>
+        
+        <div class="row">
+          <div class="two columns">
+            <label for="Type_Ctrl">Type Controle</label>
+            <input class="u-full-width" placeholder="VIDENGE" id="Type_Ctrl" type="text">
+         </div>
+                    
+    
+          <div class="two columns">
+            <label for="addc" class="invisible">x</label>
+            <input class="button-primary" value="AJOUTER" id="addc" type="button">
+          </div>
+        </div>
+       
+        <div class="row">
+        <table class='u-full-width'>
+          <thead id="tablebodyc">
+           
+
+          </thead>
+          <tbody id="tablebodyb" >
+           
+            
+          </tbody>
+        </table>
+
+      
+        <table>
+          <thead>
+            <tr>
+              <th>
+        <select id="MatV" onChange="action()"></select>
+              </th>
+              <th>
+        <label for="addcont" class="invisible">x</label><input class="button-primary" value="AJOUTER" id="addcont" type="button">
+      </th>
+      </tr>
+      </thead>
+      </table>
+      
+
+      </div>
+
+        
+         
+    </div>
+
     <div class="container">
   
       <h3>Ajouter Chauffeur :</h3>
@@ -113,6 +164,104 @@
       </table>
     </div>
 
+
+
+
+    <div class="container">
+      
+      <h3>Ajouter Charge :</h3>
+
+      <div class="row">
+
+        <div class="two columns">
+          <label for="Date_ch">Date_ch</label>
+          <input class="u-full-width" placeholder="01/01/2001" id="Date_ch" type="text">
+        </div>
+
+        <div class="two columns">
+          <label for="Matricule_Ve">Matricule_V</label>
+          <select id="Matricule_Ve" onChange="action()"></select>
+        </div>
+  
+        <div class="two columns">
+          <label for="Marque_V">Marque_V</label>
+          <input class="u-full-width" placeholder="MAZDA" id="Marque_V" type="text">
+        </div>
+  
+        <div class="two columns">
+          <label for="Matricule_CH">Matricule_CH</label>
+          <input class="u-full-width" placeholder="0274 FN 356" id="Matricule_CH" type="text">
+        </div>
+  
+        <div class="two columns">
+          <label for="Nom_Ch">Nom_Ch</label>
+          <input class="u-full-width" placeholder="MOHAMED" id="Nom_Ch" type="text">
+        </div>
+        
+        <div class="two columns">
+          <label for="Index_compt">Index_compt</label>
+          <input class="u-full-width" placeholder="500" id="Index_compt" type="text">
+        </div>
+
+        <div class="two columns">
+          <label for="Type_Charge">Type_Charge</label>
+          <input class="u-full-width" placeholder="rodage" id="Type_Charge" type="text">
+        </div>
+    
+        <div class="two columns">
+          <label for="Nbr_Jrs_Pan">Nbr_Jrs_Pan</label>
+          <input class="u-full-width" placeholder="12" id="Nbr_Jrs_Pan" type="text">
+        </div>
+    
+        <div class="two columns">
+          <label for="Cout">Cout</label>
+          <input class="u-full-width" placeholder="500" id="Cout" type="text">
+        </div>
+    
+        <div class="two columns">
+          <label for="Notes">Notes</label>
+          <input class="u-full-width" placeholder="dit quelque chose" id="Notes" type="text">
+        </div>
+            
+        <div class="two columns">
+          <label for="addch" class="invisible">x</label>
+          <input class="button-primary" value="AJOUTER" id="addch" type="button">
+        </div>
+      </div> 
+     
+      <div class="row">
+      <h3>Liste Charge:</h3>
+      <table class='u-full-width'>
+        <thead>
+          <tr>
+            <th>Date_ch</th>
+            <th>Matricule_V</th>
+            <th>Marque_V</th>
+            <th>Matricule_CH</th>
+            <th>Nom_Ch</th>
+            <th>Index_compt</th>
+            <th>Type_Charge</th>
+            <th>Nbr_Jrs_Pan</th>
+            <th>Cout</th>
+            <th>Notes</th>
+            
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="tableBody_charg">
+        </tbody>
+      </table>
+      <hr>
+
+
+      </div>
+  
+    </div>
+
+
+
+
+    
     <script type="text/javascript">
         var remote = require('electron').remote;
         document.addEventListener('keydown', function (e) {

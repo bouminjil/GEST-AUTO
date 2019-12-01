@@ -7,6 +7,58 @@ dbV = new DatastoreV({ filename: 'db/Vehicules.db' , autoload: true });
 
 dbCtr  = new Datastore({ filename: 'db/controle.db', autoload: true });
 
+dbLc  = new Datastore({ filename: 'db/ListCtrl.db', autoload: true });
+
+
+dbcharge  = new Datastore({ filename: 'db/charge.db', autoload: true });
+
+
+// Adds a charge
+exports.addCharge = function(Date_ch,Matricule_Ve,Marque_V,Matricule_CH,Nom_Ch,Index_compt,Type_Charge,Nbr_Jrs_Pan,Cout,Notes) {
+
+  // Create the person object
+  var charge = {
+   
+    "Date_ch"      : Date_ch,
+    "Matricule_Ve" : Matricule_Ve,
+    "Marque_V"     : Marque_V,
+    "Matricule_CH" : Matricule_CH,
+    "Nom_Ch"       : Nom_Ch,
+    "Index_compt"  : Index_compt,
+    "Type_Charge"  : Type_Charge,
+    "Nbr_Jrs_Pan"  : Nbr_Jrs_Pan,
+    "Cout"         : Cout,
+    "Notes"        : Notes
+  };
+
+  // Save the person to the database
+  dbcharge.insert(charge, function(err, newDoc) {
+    // Do nothing
+  });
+};
+
+
+// Returns all persons
+exports.getCharges = function(fncharge) {
+
+// Get all persons from the database
+dbcharge.find({}, function(err, docs) {
+
+  // Execute the parameter function
+  fncharge(docs);
+  });
+}
+
+// Deletes a charge
+exports.deleteCharge = function(id) {
+
+  dbcharge.remove({ _id: id }, {}, function(err, numRemoved) {
+    // Do nothing
+  });
+}
+
+
+//////////////////////////////////////////////////////
 
 // Adds a person
 exports.addPerson = function(Nom, Prénom,Matricule,Télephone,CIN) {
@@ -127,3 +179,54 @@ exports.deleteControl = function(id) {
     // Do nothing
   });
 }
+
+
+
+///// List Conrol //////
+
+
+
+/* exports.addCl = function(Matricule_V,Ctr_Type1,Ctrl_Value1,Ctr_Type2,Ctrl_Value2,Ctr_Type3,Ctrl_Value3,Ctr_Type4,Ctrl_Value4,Ctr_Type5,Ctrl_Value5,Ctr_Type6,Ctrl_Value6) {
+
+  // Create the person object
+  var listctrl = {
+    "Matricule_V":Matricule_V,
+    "Ctr_Type1":Ctr_Type1,
+    "Ctrl_Value1":Ctrl_Value1,
+    "Ctr_Type2":Ctr_Type2,
+    "Ctrl_Value2":Ctrl_Value2,
+    "Ctr_Type3":Ctr_Type3,
+    "Ctrl_Value3":Ctrl_Value3,
+    "Ctr_Type4":Ctr_Type4,
+    "Ctrl_Value4":Ctrl_Value4,
+    "Ctr_Type5":Ctr_Type5,
+    "Ctrl_Value5":Ctrl_Value5,
+    "Ctr_Type6":Ctr_Type6,
+    "Ctrl_Value6":Ctrl_Value6
+  };
+
+  // Save the person to the database
+  db.insert(person, function(err, newDoc) {
+    // Do nothing
+  });
+};
+
+
+// Returns all persons
+exports.getPersons = function(fnc) {
+
+// Get all persons from the database
+  db.find({}, function(err, docs) {
+
+  // Execute the parameter function
+    fnc(docs);
+  });
+}
+
+// Deletes a person
+exports.deletePerson = function(id) {
+
+  db.remove({ _id: id }, {}, function(err, numRemoved) {
+    // Do nothing
+  });
+}*/

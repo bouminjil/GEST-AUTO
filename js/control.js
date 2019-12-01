@@ -22,31 +22,16 @@ window.onload = function() {
   
   }
 
-  function populateTable_Ctrl() {
+  function populateTable_Ctrl(tablebody) {
 
     // Retrieve control
-    database.getControls(function(controls) {
-  
-      // Generate the table body
-      var tableBody = '';
-      tableBody += '<thead>';
-      tableBody += '<tr>';
-      tableBody += '<th>'+'MARQUE'+'<th>';
-      tableBody += '<th>'+'MATRIQULE'+'<th>';
-      for (i = 0; i < controls.length; i++) {
-        
-        tableBody += '<th>' + controls[i].Type_Ctrl + '</th>';
-        
-       // tableBody += '  <td><input type="button" value="Delete" onclick="deleteControl(\'' + controls[i]._id + '\')"></td>'
-        
-      }
-      tableBody += '</tr>';
-      tableBody += '</thead>';
+   
+   var tableBody=''
 
-      tableBody += '<tbody></tbody>';
-
+    tableBody+= 'ccccc'
     
-    });
+    document.getElementById('tablebody').innerHTML = tableBody;
+
   }
 
   function deleteControl(id) {
